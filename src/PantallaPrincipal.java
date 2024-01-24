@@ -10,10 +10,11 @@
 public class PantallaPrincipal extends javax.swing.JFrame {
 
     /**
-     * Creates new form PantallaPrincipal
+     * Creates new form PantallaPrincipal testing comentary
      */
     public PantallaPrincipal() {
         initComponents();
+        
     }
 
     /**
