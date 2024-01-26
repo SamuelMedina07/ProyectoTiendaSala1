@@ -19,6 +19,9 @@ public class Menu extends javax.swing.JFrame {
     private static final int PANTALONES = 2;
     private static final int ZAPATOS = 3;
     private static final int CAMISAS = 4;
+    
+    ImageIcon image;
+    Icon icon;
     /**
      * Creates new form Menu
      */
@@ -56,15 +59,15 @@ public class Menu extends javax.swing.JFrame {
     }
     
     public void cambiarImagenes(String imgProducto1, String imgProducto2, String imgProducto3) {
-        ImageIcon image1 = new ImageIcon(getClass().getResource("/imagenes/" + imgProducto1));
+        ImageIcon image1 = new ImageIcon(getClass().getResource("/imgs/" + imgProducto1));
         Icon icon1 = new ImageIcon(image1.getImage().getScaledInstance(lblProducto1.getWidth(), lblProducto1.getHeight(), Image.SCALE_DEFAULT));
         lblProducto1.setIcon(icon1);
 
-        ImageIcon image2 = new ImageIcon(getClass().getResource("/imagenes/" + imgProducto2));
+        ImageIcon image2 = new ImageIcon(getClass().getResource("/imgs/" + imgProducto2));
         Icon icon2 = new ImageIcon(image2.getImage().getScaledInstance(lblProducto2.getWidth(), lblProducto2.getHeight(), Image.SCALE_DEFAULT));
         lblProducto2.setIcon(icon2);
 
-        ImageIcon image3 = new ImageIcon(getClass().getResource("/imagenes/" + imgProducto3));
+        ImageIcon image3 = new ImageIcon(getClass().getResource("/imgs/" + imgProducto3));
         Icon icon3 = new ImageIcon(image3.getImage().getScaledInstance(lblProducto3.getWidth(), lblProducto3.getHeight(), Image.SCALE_DEFAULT));
         lblProducto3.setIcon(icon3);
     }
