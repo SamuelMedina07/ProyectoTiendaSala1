@@ -7,6 +7,7 @@
  *
  * @author Samuel
  */
+import java.text.DecimalFormat;
 import javax.swing.JOptionPane; 
 
 public class Factura extends javax.swing.JFrame {
@@ -20,6 +21,31 @@ public class Factura extends javax.swing.JFrame {
             
     }
 
+    public void tomardato(int dato)
+    {
+    th.setText(""+dato);
+    
+    }
+        
+    public void Calculo(){
+    double pruebaSamuel,pruebaSamuel2,subtotal,impuesto,totalfinal;
+    DecimalFormat df = new DecimalFormat("#.##");
+    
+    pruebaSamuel =Integer.parseInt(TotalFrameSamuel1.getText());
+    pruebaSamuel2 = Integer.parseInt(Tot2.getText());
+    
+    subtotal = pruebaSamuel+pruebaSamuel2;
+    String sb = subtotal + "";
+     tsub.setText(sb);
+    impuesto = subtotal*0.18;
+    String isv = String.format("%.2f",impuesto);
+     ISV.setText(isv);
+    totalfinal= subtotal + impuesto;
+    String TFinal = totalfinal + "";
+    TxtF.setText(TFinal);
+    
+    
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -34,6 +60,17 @@ public class Factura extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         BotonPago = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        Tot2 = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        ISV = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+        tsub = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        TxtF = new javax.swing.JTextField();
+        TotalFrameSamuel1 = new javax.swing.JTextField();
+        th = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -75,9 +112,58 @@ public class Factura extends javax.swing.JFrame {
         jPanel1.add(BotonPago);
         BotonPago.setBounds(350, 390, 72, 23);
 
-        jButton2.setText("Cancelar");
+        jButton2.setText("Abortar");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
         jPanel1.add(jButton2);
-        jButton2.setBounds(270, 390, 74, 23);
+        jButton2.setBounds(270, 390, 72, 23);
+
+        jButton1.setText("Seguir Comprando");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton1);
+        jButton1.setBounds(135, 390, 130, 23);
+
+        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel2.setText("FrameSamuelPrueba");
+        jPanel1.add(jLabel2);
+        jLabel2.setBounds(20, 100, 120, 16);
+        jPanel1.add(Tot2);
+        Tot2.setBounds(150, 130, 64, 22);
+
+        jLabel3.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel3.setText("ISV 18%");
+        jPanel1.add(jLabel3);
+        jLabel3.setBounds(297, 310, 70, 16);
+        jPanel1.add(ISV);
+        ISV.setBounds(360, 300, 71, 22);
+
+        jLabel4.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel4.setText("Subtotal");
+        jPanel1.add(jLabel4);
+        jLabel4.setBounds(300, 280, 70, 16);
+        jPanel1.add(tsub);
+        tsub.setBounds(360, 270, 71, 22);
+
+        jLabel5.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel5.setText("TotalFinal");
+        jPanel1.add(jLabel5);
+        jLabel5.setBounds(300, 340, 70, 16);
+        jPanel1.add(TxtF);
+        TxtF.setBounds(360, 330, 71, 22);
+        jPanel1.add(TotalFrameSamuel1);
+        TotalFrameSamuel1.setBounds(150, 100, 64, 22);
+        jPanel1.add(th);
+        th.setBounds(240, 100, 64, 22);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -110,8 +196,9 @@ public class Factura extends javax.swing.JFrame {
             null, // Custom icon (null means no custom icon) 
             opciones, 
             opciones[0] 
+                
         ); 
-  
+                    Calculo();
         // Check the user's choice and display a 
         // corresponding message 
         if (decision == JOptionPane.YES_OPTION) { 
@@ -119,13 +206,30 @@ public class Factura extends javax.swing.JFrame {
             // show a message indicating that they are 
             // proceeding 
             JOptionPane.showMessageDialog(null,"Transaccion Confirmada"); 
+            
+            
+            
         } 
         else if (decision == JOptionPane.NO_OPTION) {
-            JOptionPane.showMessageDialog(null, "Factura Cancelada", "Factura Cancelada", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Transaccion No Confirmada", "Transaccion No Confirmada", JOptionPane.ERROR_MESSAGE);
             
         } 
         
+
+        
     }//GEN-LAST:event_BotonPagoActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        JOptionPane.showMessageDialog(null, "Operacion Abortada", "Operacion Abortada", JOptionPane.ERROR_MESSAGE);
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        Menu Menu = new Menu();
+        
+        Menu.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -164,9 +268,20 @@ public class Factura extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BotonPago;
+    private javax.swing.JTextField ISV;
+    private javax.swing.JTextField Tot2;
+    private javax.swing.JTextField TotalFrameSamuel1;
+    private javax.swing.JTextField TxtF;
+    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JTextField th;
+    private javax.swing.JTextField tsub;
     // End of variables declaration//GEN-END:variables
 }
