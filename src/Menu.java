@@ -22,13 +22,18 @@ public class Menu extends javax.swing.JFrame {
     
     ImageIcon image;
     Icon icon;
+    
      Factura fac = new Factura();
+     EnviosCarrito encarr = new EnviosCarrito();
     /**
      * Creates new form Menu
      */
     public Menu() {
         initComponents();
          cambiarCategoria(PERFUMES);
+         Carrito.setEnabled(false);
+         LimpiezaComboboxes("0","0","0");
+
          
          }
     
@@ -38,28 +43,27 @@ public class Menu extends javax.swing.JFrame {
             case PERFUMES:
                 cambiarImagenes("Perfume 1.png", "perfume 2.png", "perfume 3.png");
                 cambiarPrecios("300", "500", "800");
-                LimpiezaComboboxes("0","0","0");
-                
+                                
                 break;
             case CARTERAS:
                 cambiarImagenes("carteras 1.png", "carteras 2.png", "carteras 3.png");
                 cambiarPrecios("750", "680", "175");
-                LimpiezaComboboxes("0","0","0");
+                
                 break;
             case PANTALONES:
                 cambiarImagenes("pantalones 1.png", "pantalones 2.png", "pantalones 3.png");
                 cambiarPrecios("900", "1250", "1500");
-                LimpiezaComboboxes("0","0","0");
+              
                 break;
             case ZAPATOS:
                 cambiarImagenes("zapatos 1.png", "zapatos 2.png", "zapatos 3.png");
                 cambiarPrecios("850", "360", "450");
-                LimpiezaComboboxes("0","0","0");
+              
                 break;
             case CAMISAS:
                 cambiarImagenes("camisas 1.png", "camisas 2.png", "camisas 3.png");
                 cambiarPrecios("790", "250", "680");
-                LimpiezaComboboxes("0","0","0");
+
                 break;
         }
         
@@ -116,7 +120,7 @@ public class Menu extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        Carrito = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -320,14 +324,14 @@ public class Menu extends javax.swing.JFrame {
         jPanel1.add(jButton3);
         jButton3.setBounds(40, 380, 130, 23);
 
-        jButton4.setText("Ver Carrito");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        Carrito.setText("Ver Carrito");
+        Carrito.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                CarritoActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton4);
-        jButton4.setBounds(180, 380, 110, 23);
+        jPanel1.add(Carrito);
+        Carrito.setBounds(180, 380, 110, 23);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -360,29 +364,33 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-    
+               Carrito.setEnabled(true);
+               String Precio1 = txtPrecioProducto1.getText();
+               String Precio2 = txtPrecioProducto2.getText();
+               String Precio3 = txtPrecioProducto3.getText();
+               
+               String Cantidad1 = txtCantidadProducto1.getText();
+               String Cantidad2 = txtCantidadProducto2.getText();
+               String Cantidad3 = txtCantidadProducto3.getText();
+                       
              if (cbCategoria.getSelectedItem() == "PERFUMES") {
-                 perfumesEnvio(); 
-                }  
+                 encarr.perfumesEnvio(Precio1, Precio2, Precio3, Cantidad1, Cantidad2, Cantidad3); 
+                }
+             else if (cbCategoria.getSelectedItem() == "CARTERAS") {
+                 encarr.carterasEnvio(Precio1, Precio2, Precio3, Cantidad1, Cantidad2, Cantidad3); 
+                }
+             else if (cbCategoria.getSelectedItem() == "PANTALONES") {
+                 encarr.pantalonesEnvio(Precio1, Precio2, Precio3, Cantidad1, Cantidad2, Cantidad3); 
+                }
+             else if (cbCategoria.getSelectedItem() == "ZAPATOS") {
+                 encarr.zapatosEnvio(Precio1, Precio2, Precio3, Cantidad1, Cantidad2, Cantidad3); 
+                }
+             else if (cbCategoria.getSelectedItem() == "CAMISAS") {
+                 encarr.camisasEnvio(Precio1, Precio2, Precio3, Cantidad1, Cantidad2, Cantidad3); 
+                }
+             
  
     }//GEN-LAST:event_jButton3ActionPerformed
-    public void perfumesEnvio()
-    {
-    int producto1,producto2,producto3;
-    int producto1Precio,producto2Precio,producto3Precio,envio;
-     producto1 = Integer.parseInt(txtCantidadProducto1.getText());
-     producto1Precio = Integer.parseInt(txtPrecioProducto1.getText());
-     
-     producto2 = Integer.parseInt(txtCantidadProducto2.getText());
-     producto2Precio = Integer.parseInt(txtPrecioProducto2.getText());
-     
-     producto3 = Integer.parseInt(txtCantidadProducto3.getText());
-     producto3Precio = Integer.parseInt(txtPrecioProducto3.getText());
-     
-     envio = ((producto1Precio*producto1) + (producto2Precio*producto2) + (producto3Precio*producto3));
-     fac.tomardatoPerfume(envio);
-     fac.setVisible(false);
-    }
     
     public void LimpiezaComboboxes(String B,String BS,String BSP)
     {
@@ -415,10 +423,11 @@ public class Menu extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_cbCategoriaActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void CarritoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CarritoActionPerformed
+    
     fac.Calculo();
     fac.setVisible(true);
-    }//GEN-LAST:event_jButton4ActionPerformed
+    }//GEN-LAST:event_CarritoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -456,11 +465,11 @@ public class Menu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Carrito;
     private javax.swing.JComboBox<String> cbCategoria;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

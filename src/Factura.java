@@ -19,6 +19,7 @@ public class Factura extends javax.swing.JFrame {
         initComponents();
         this.setLocationRelativeTo(null);
        InicioZero("0","0","0","0","0");
+       BotonPago.setEnabled(false);
             
     }
     public void InicioZero(String a, String b, String c, String d, String e){
@@ -29,16 +30,35 @@ public class Factura extends javax.swing.JFrame {
     Zapato.setText(d);
     Camisa.setText(e);
     }
+ 
     public void tomardatoPerfume(int dato)
     {
-       
+        
             Perfume.setText(""+dato);
-  
+    }
     
+    public void tomardatoCartera(int dato1)
+    {
+            Cartera.setText(""+dato1);
+    }
     
+    public void tomardatoPantalon(int dato1)
+    {
+            Pantalon.setText(""+dato1);
+    }
+    
+    public void tomardatoZapato(int dato1)
+    {
+            Zapato.setText(""+dato1);
+    }
+    
+    public void tomardatoCamisa(int dato1)
+    {
+            Camisa.setText(""+dato1);
     }
         
     public void Calculo(){
+     BotonPago.setEnabled(true);
     double Perf,Car,Pan,Zap,Cam,subtotal,impuesto,totalfinal;
    // DecimalFormat df = new DecimalFormat("#.##");
     
@@ -100,16 +120,16 @@ public class Factura extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(102, 204, 255));
 
         jLabel1.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel1.setText("FACTURA COMPRA");
+        jLabel1.setText("Carrito / Factura");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(160, 160, 160)
-                .addComponent(jLabel1)
-                .addContainerGap(194, Short.MAX_VALUE))
+                .addGap(176, 176, 176)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(179, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -153,6 +173,7 @@ public class Factura extends javax.swing.JFrame {
         jPanel1.add(jLabel2);
         jLabel2.setBounds(20, 100, 120, 16);
 
+        Cartera.setEditable(false);
         Cartera.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 CarteraActionPerformed(evt);
@@ -165,6 +186,8 @@ public class Factura extends javax.swing.JFrame {
         jLabel3.setText("ISV 18%");
         jPanel1.add(jLabel3);
         jLabel3.setBounds(297, 310, 70, 16);
+
+        ISV.setEditable(false);
         jPanel1.add(ISV);
         ISV.setBounds(360, 300, 71, 22);
 
@@ -172,6 +195,8 @@ public class Factura extends javax.swing.JFrame {
         jLabel4.setText("Subtotal");
         jPanel1.add(jLabel4);
         jLabel4.setBounds(300, 280, 70, 16);
+
+        tsub.setEditable(false);
         jPanel1.add(tsub);
         tsub.setBounds(360, 270, 71, 22);
 
@@ -179,9 +204,12 @@ public class Factura extends javax.swing.JFrame {
         jLabel5.setText("TotalFinal");
         jPanel1.add(jLabel5);
         jLabel5.setBounds(300, 340, 70, 16);
+
+        TxtF.setEditable(false);
         jPanel1.add(TxtF);
         TxtF.setBounds(360, 330, 71, 22);
 
+        Perfume.setEditable(false);
         Perfume.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 PerfumeActionPerformed(evt);
@@ -197,18 +225,29 @@ public class Factura extends javax.swing.JFrame {
         jLabel7.setText("Pantalones");
         jPanel1.add(jLabel7);
         jLabel7.setBounds(20, 170, 60, 16);
+
+        Pantalon.setEditable(false);
         jPanel1.add(Pantalon);
         Pantalon.setBounds(150, 170, 64, 22);
 
         jLabel8.setText("Zapatos");
         jPanel1.add(jLabel8);
         jLabel8.setBounds(20, 210, 60, 16);
+
+        Zapato.setEditable(false);
         jPanel1.add(Zapato);
         Zapato.setBounds(150, 210, 64, 22);
 
         jLabel9.setText("Camisas");
         jPanel1.add(jLabel9);
         jLabel9.setBounds(20, 260, 60, 16);
+
+        Camisa.setEditable(false);
+        Camisa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CamisaActionPerformed(evt);
+            }
+        });
         jPanel1.add(Camisa);
         Camisa.setBounds(150, 250, 64, 22);
 
@@ -283,6 +322,10 @@ public class Factura extends javax.swing.JFrame {
     private void CarteraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CarteraActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_CarteraActionPerformed
+
+    private void CamisaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CamisaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CamisaActionPerformed
 
     /**
      * @param args the command line arguments
