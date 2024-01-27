@@ -18,26 +18,37 @@ public class Factura extends javax.swing.JFrame {
     public Factura() {
         initComponents();
         this.setLocationRelativeTo(null);
+       InicioZero("0","0","0","0","0");
             
     }
-
+    public void InicioZero(String a, String b, String c, String d, String e){
+    
+    Perfume.setText(a);
+    Cartera.setText(b);
+    Pantalon.setText(c);
+    Zapato.setText(d);
+    Camisa.setText(e);
+    }
     public void tomardatoPerfume(int dato)
     {
        
-            th.setText(""+dato);
+            Perfume.setText(""+dato);
   
     
     
     }
         
     public void Calculo(){
-    double pruebaSamuel,pruebaSamuel2,subtotal,impuesto,totalfinal;
-    DecimalFormat df = new DecimalFormat("#.##");
+    double Perf,Car,Pan,Zap,Cam,subtotal,impuesto,totalfinal;
+   // DecimalFormat df = new DecimalFormat("#.##");
     
-    pruebaSamuel =Integer.parseInt(TotalFrameSamuel1.getText());
-    pruebaSamuel2 = Integer.parseInt(Tot2.getText());
+    Perf =Integer.parseInt(Perfume.getText());
+    Car = Integer.parseInt(Cartera.getText());
+    Pan = Integer.parseInt(Pantalon.getText());
+    Zap = Integer.parseInt(Zapato.getText());
+    Cam = Integer.parseInt(Camisa.getText());
     
-    subtotal = pruebaSamuel+pruebaSamuel2;
+    subtotal = Perf+Car+Pan+Zap+Cam;
     String sb = subtotal + "";
      tsub.setText(sb);
     impuesto = subtotal*0.18;
@@ -65,15 +76,21 @@ public class Factura extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
-        Tot2 = new javax.swing.JTextField();
+        Cartera = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         ISV = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         tsub = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         TxtF = new javax.swing.JTextField();
-        TotalFrameSamuel1 = new javax.swing.JTextField();
-        th = new javax.swing.JTextField();
+        Perfume = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        Pantalon = new javax.swing.JTextField();
+        jLabel8 = new javax.swing.JLabel();
+        Zapato = new javax.swing.JTextField();
+        jLabel9 = new javax.swing.JLabel();
+        Camisa = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -83,7 +100,6 @@ public class Factura extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(102, 204, 255));
 
         jLabel1.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("FACTURA COMPRA");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -133,15 +149,19 @@ public class Factura extends javax.swing.JFrame {
         jPanel1.add(jButton1);
         jButton1.setBounds(135, 390, 130, 23);
 
-        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel2.setText("FrameSamuelPrueba");
+        jLabel2.setText("Perfumes");
         jPanel1.add(jLabel2);
         jLabel2.setBounds(20, 100, 120, 16);
-        jPanel1.add(Tot2);
-        Tot2.setBounds(150, 130, 64, 22);
+
+        Cartera.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CarteraActionPerformed(evt);
+            }
+        });
+        jPanel1.add(Cartera);
+        Cartera.setBounds(150, 130, 64, 22);
 
         jLabel3.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("ISV 18%");
         jPanel1.add(jLabel3);
         jLabel3.setBounds(297, 310, 70, 16);
@@ -149,7 +169,6 @@ public class Factura extends javax.swing.JFrame {
         ISV.setBounds(360, 300, 71, 22);
 
         jLabel4.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("Subtotal");
         jPanel1.add(jLabel4);
         jLabel4.setBounds(300, 280, 70, 16);
@@ -157,22 +176,41 @@ public class Factura extends javax.swing.JFrame {
         tsub.setBounds(360, 270, 71, 22);
 
         jLabel5.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
         jLabel5.setText("TotalFinal");
         jPanel1.add(jLabel5);
         jLabel5.setBounds(300, 340, 70, 16);
         jPanel1.add(TxtF);
         TxtF.setBounds(360, 330, 71, 22);
-        jPanel1.add(TotalFrameSamuel1);
-        TotalFrameSamuel1.setBounds(150, 100, 64, 22);
 
-        th.addActionListener(new java.awt.event.ActionListener() {
+        Perfume.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                thActionPerformed(evt);
+                PerfumeActionPerformed(evt);
             }
         });
-        jPanel1.add(th);
-        th.setBounds(240, 100, 64, 22);
+        jPanel1.add(Perfume);
+        Perfume.setBounds(150, 100, 64, 22);
+
+        jLabel6.setText("Carteras");
+        jPanel1.add(jLabel6);
+        jLabel6.setBounds(20, 130, 60, 16);
+
+        jLabel7.setText("Pantalones");
+        jPanel1.add(jLabel7);
+        jLabel7.setBounds(20, 170, 60, 16);
+        jPanel1.add(Pantalon);
+        Pantalon.setBounds(150, 170, 64, 22);
+
+        jLabel8.setText("Zapatos");
+        jPanel1.add(jLabel8);
+        jLabel8.setBounds(20, 210, 60, 16);
+        jPanel1.add(Zapato);
+        Zapato.setBounds(150, 210, 64, 22);
+
+        jLabel9.setText("Camisas");
+        jPanel1.add(jLabel9);
+        jLabel9.setBounds(20, 260, 60, 16);
+        jPanel1.add(Camisa);
+        Camisa.setBounds(150, 250, 64, 22);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -207,7 +245,7 @@ public class Factura extends javax.swing.JFrame {
             opciones[0] 
                 
         ); 
-                    Calculo();
+                    
         // Check the user's choice and display a 
         // corresponding message 
         if (decision == JOptionPane.YES_OPTION) { 
@@ -234,15 +272,17 @@ public class Factura extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        Menu Menu = new Menu();
-        
-        Menu.setVisible(true);
+   
         this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void thActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_thActionPerformed
+    private void PerfumeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PerfumeActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_thActionPerformed
+    }//GEN-LAST:event_PerfumeActionPerformed
+
+    private void CarteraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CarteraActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CarteraActionPerformed
 
     /**
      * @param args the command line arguments
@@ -281,10 +321,13 @@ public class Factura extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BotonPago;
+    private javax.swing.JTextField Camisa;
+    private javax.swing.JTextField Cartera;
     private javax.swing.JTextField ISV;
-    private javax.swing.JTextField Tot2;
-    private javax.swing.JTextField TotalFrameSamuel1;
+    private javax.swing.JTextField Pantalon;
+    private javax.swing.JTextField Perfume;
     private javax.swing.JTextField TxtF;
+    private javax.swing.JTextField Zapato;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
@@ -292,9 +335,12 @@ public class Factura extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JTextField th;
     private javax.swing.JTextField tsub;
     // End of variables declaration//GEN-END:variables
 }
