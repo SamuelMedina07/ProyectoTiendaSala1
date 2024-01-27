@@ -22,37 +22,43 @@ public class Menu extends javax.swing.JFrame {
     
     ImageIcon image;
     Icon icon;
+     Factura fac = new Factura();
     /**
      * Creates new form Menu
      */
     public Menu() {
         initComponents();
          cambiarCategoria(PERFUMES);
-    }
+         }
     
     public void cambiarCategoria(int categoria) {
         
         switch(categoria){
             case PERFUMES:
                 cambiarImagenes("Perfume 1.png", "perfume 2.png", "perfume 3.png");
-                cambiarPrecios("200", "500", "300");
+                cambiarPrecios("300", "500", "800");
+                LimpiezaComboboxes("0","0","0");
+                
                 break;
             case CARTERAS:
                 cambiarImagenes("carteras 1.png", "carteras 2.png", "carteras 3.png");
-                cambiarPrecios("200", "350", "300");
+                cambiarPrecios("750", "680", "175");
+                LimpiezaComboboxes("0","0","0");
                 break;
             case PANTALONES:
                 cambiarImagenes("pantalones 1.png", "pantalones 2.png", "pantalones 3.png");
-                cambiarPrecios("100", "360", "250");
-                
+                cambiarPrecios("900", "1250", "1500");
+                LimpiezaComboboxes("0","0","0");
                 break;
             case ZAPATOS:
                 cambiarImagenes("zapatos 1.png", "zapatos 2.png", "zapatos 3.png");
-                cambiarPrecios("100", "360", "250");
+                cambiarPrecios("850", "360", "450");
+                LimpiezaComboboxes("0","0","0");
                 break;
             case CAMISAS:
                 cambiarImagenes("camisas 1.png", "camisas 2.png", "camisas 3.png");
-                cambiarPrecios("100", "450", "150");
+                cambiarPrecios("790", "250", "680");
+                LimpiezaComboboxes("0","0","0");
                 break;
         }
         
@@ -141,6 +147,11 @@ public class Menu extends javax.swing.JFrame {
                 cbCategoriaItemStateChanged(evt);
             }
         });
+        cbCategoria.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbCategoriaActionPerformed(evt);
+            }
+        });
 
         lblProducto1.setBackground(new java.awt.Color(204, 204, 255));
         lblProducto1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
@@ -154,6 +165,24 @@ public class Menu extends javax.swing.JFrame {
         txtPrecioProducto2.setEditable(false);
 
         txtPrecioProducto3.setEditable(false);
+
+        txtCantidadProducto1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtCantidadProducto1ActionPerformed(evt);
+            }
+        });
+
+        txtCantidadProducto2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtCantidadProducto2ActionPerformed(evt);
+            }
+        });
+
+        txtCantidadProducto3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtCantidadProducto3ActionPerformed(evt);
+            }
+        });
 
         jLabel2.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
@@ -276,6 +305,11 @@ public class Menu extends javax.swing.JFrame {
         jButton2.setBounds(380, 380, 100, 23);
 
         jButton3.setText("Agregar");
+        jButton3.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                jButton3ItemStateChanged(evt);
+            }
+        });
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
@@ -302,6 +336,7 @@ public class Menu extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        fac.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void cbCategoriaItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cbCategoriaItemStateChanged
@@ -314,8 +349,60 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
+    
+             if (cbCategoria.getSelectedItem() == "PERFUMES") {
+                 perfumesEnvio(); 
+                }  
+ 
     }//GEN-LAST:event_jButton3ActionPerformed
+    public void perfumesEnvio()
+    {
+    int producto1,producto2,producto3;
+    int producto1Precio,producto2Precio,producto3Precio,envio;
+     producto1 = Integer.parseInt(txtCantidadProducto1.getText());
+     producto1Precio = Integer.parseInt(txtPrecioProducto1.getText());
+     
+     producto2 = Integer.parseInt(txtCantidadProducto2.getText());
+     producto2Precio = Integer.parseInt(txtPrecioProducto2.getText());
+     
+     producto3 = Integer.parseInt(txtCantidadProducto3.getText());
+     producto3Precio = Integer.parseInt(txtPrecioProducto3.getText());
+     
+     envio = ((producto1Precio*producto1) + (producto2Precio*producto2) + (producto3Precio*producto3));
+     fac.tomardatoPerfume(envio);
+     fac.setVisible(false);
+    }
+    
+    public void LimpiezaComboboxes(String B,String BS,String BSP)
+    {
+        txtCantidadProducto1.setText(B);
+        txtCantidadProducto2.setText(BS);
+        txtCantidadProducto3.setText(BSP);
+    }
+    
+    private void txtCantidadProducto1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCantidadProducto1ActionPerformed
+        // TODO add your handling code here:
+       
+    }//GEN-LAST:event_txtCantidadProducto1ActionPerformed
+
+    private void txtCantidadProducto2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCantidadProducto2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtCantidadProducto2ActionPerformed
+
+    private void txtCantidadProducto3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCantidadProducto3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtCantidadProducto3ActionPerformed
+
+    private void jButton3ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jButton3ItemStateChanged
+    
+       
+   
+        
+    }//GEN-LAST:event_jButton3ItemStateChanged
+
+    private void cbCategoriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbCategoriaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cbCategoriaActionPerformed
 
     /**
      * @param args the command line arguments

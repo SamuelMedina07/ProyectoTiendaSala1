@@ -21,9 +21,12 @@ public class Factura extends javax.swing.JFrame {
             
     }
 
-    public void tomardato(int dato)
+    public void tomardatoPerfume(int dato)
     {
-    th.setText(""+dato);
+       
+            th.setText(""+dato);
+  
+    
     
     }
         
@@ -162,6 +165,12 @@ public class Factura extends javax.swing.JFrame {
         TxtF.setBounds(360, 330, 71, 22);
         jPanel1.add(TotalFrameSamuel1);
         TotalFrameSamuel1.setBounds(150, 100, 64, 22);
+
+        th.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                thActionPerformed(evt);
+            }
+        });
         jPanel1.add(th);
         th.setBounds(240, 100, 64, 22);
 
@@ -230,6 +239,10 @@ public class Factura extends javax.swing.JFrame {
         Menu.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void thActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_thActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_thActionPerformed
 
     /**
      * @param args the command line arguments
