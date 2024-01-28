@@ -8,42 +8,42 @@ import javax.swing.ImageIcon;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
  * @author carlo
  */
 public class Menu extends javax.swing.JFrame {
+
     private static final int PERFUMES = 0;
     private static final int CARTERAS = 1;
     private static final int PANTALONES = 2;
     private static final int ZAPATOS = 3;
     private static final int CAMISAS = 4;
-    
+
     ImageIcon image;
     Icon icon;
-    
-     Factura fac = new Factura();
-     EnviosCarrito encarr = new EnviosCarrito();
+
+    Factura fac = new Factura();
+    EnviosCarrito encarr = new EnviosCarrito();
+
     /**
      * Creates new form Menu
      */
     public Menu() {
         initComponents();
-         cambiarCategoria(PERFUMES);
-         Carrito.setEnabled(false);
-         LimpiezaComboboxes("0","0","0");
+        cambiarCategoria(PERFUMES);
+        Carrito.setEnabled(false);
+        LimpiezaComboboxes("0", "0", "0");
 
-         
-         }
-    
+    }
+
     public void cambiarCategoria(int categoria) {
-        
-        switch(categoria){
+
+        switch (categoria) {
             case PERFUMES:
                 cambiarImagenes("Perfume 1.png", "perfume 2.png", "perfume 3.png");
                 cambiarPrecios("300", "500", "800");
-                                
+               
                 break;
             case CARTERAS:
                 cambiarImagenes("carteras 1.png", "carteras 2.png", "carteras 3.png");
@@ -53,12 +53,12 @@ public class Menu extends javax.swing.JFrame {
             case PANTALONES:
                 cambiarImagenes("pantalones 1.png", "pantalones 2.png", "pantalones 3.png");
                 cambiarPrecios("900", "1250", "1500");
-              
+
                 break;
             case ZAPATOS:
                 cambiarImagenes("zapatos 1.png", "zapatos 2.png", "zapatos 3.png");
                 cambiarPrecios("850", "360", "450");
-              
+
                 break;
             case CAMISAS:
                 cambiarImagenes("camisas 1.png", "camisas 2.png", "camisas 3.png");
@@ -66,9 +66,9 @@ public class Menu extends javax.swing.JFrame {
 
                 break;
         }
-        
+
     }
-    
+
     public void cambiarImagenes(String imgProducto1, String imgProducto2, String imgProducto3) {
         ImageIcon image1 = new ImageIcon(getClass().getResource("/imgs/" + imgProducto1));
         Icon icon1 = new ImageIcon(image1.getImage().getScaledInstance(lblProducto1.getWidth(), lblProducto1.getHeight(), Image.SCALE_DEFAULT));
@@ -82,8 +82,8 @@ public class Menu extends javax.swing.JFrame {
         Icon icon3 = new ImageIcon(image3.getImage().getScaledInstance(lblProducto3.getWidth(), lblProducto3.getHeight(), Image.SCALE_DEFAULT));
         lblProducto3.setIcon(icon3);
     }
-    
-    public void cambiarPrecios(String precio1, String precio2,String precio3){
+
+    public void cambiarPrecios(String precio1, String precio2, String precio3) {
         txtPrecioProducto1.setText(precio1);
         txtPrecioProducto2.setText(precio2);
         txtPrecioProducto3.setText(precio3);
@@ -351,7 +351,7 @@ public class Menu extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        
+
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void cbCategoriaItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cbCategoriaItemStateChanged
@@ -364,44 +364,45 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-               Carrito.setEnabled(true);
-               String Precio1 = txtPrecioProducto1.getText();
-               String Precio2 = txtPrecioProducto2.getText();
-               String Precio3 = txtPrecioProducto3.getText();
-               
-               String Cantidad1 = txtCantidadProducto1.getText();
-               String Cantidad2 = txtCantidadProducto2.getText();
-               String Cantidad3 = txtCantidadProducto3.getText();
-                       
-             if (cbCategoria.getSelectedItem() == "PERFUMES") {
-                 encarr.perfumesEnvio(Precio1, Precio2, Precio3, Cantidad1, Cantidad2, Cantidad3); 
-                }
-             else if (cbCategoria.getSelectedItem() == "CARTERAS") {
-                 encarr.carterasEnvio(Precio1, Precio2, Precio3, Cantidad1, Cantidad2, Cantidad3); 
-                }
-             else if (cbCategoria.getSelectedItem() == "PANTALONES") {
-                 encarr.pantalonesEnvio(Precio1, Precio2, Precio3, Cantidad1, Cantidad2, Cantidad3); 
-                }
-             else if (cbCategoria.getSelectedItem() == "ZAPATOS") {
-                 encarr.zapatosEnvio(Precio1, Precio2, Precio3, Cantidad1, Cantidad2, Cantidad3); 
-                }
-             else if (cbCategoria.getSelectedItem() == "CAMISAS") {
-                 encarr.camisasEnvio(Precio1, Precio2, Precio3, Cantidad1, Cantidad2, Cantidad3); 
-                }
-             
- 
+        Carrito.setEnabled(true);
+        String Precio1 = txtPrecioProducto1.getText();
+        String Precio2 = txtPrecioProducto2.getText();
+        String Precio3 = txtPrecioProducto3.getText();
+
+        String Cantidad1 = txtCantidadProducto1.getText();
+        String Cantidad2 = txtCantidadProducto2.getText();
+        String Cantidad3 = txtCantidadProducto3.getText();
+
+        if (cbCategoria.getSelectedItem() == "PERFUMES") {
+            encarr.perfumesEnvio(Precio1, Precio2, Precio3, Cantidad1, Cantidad2, Cantidad3);
+        } else if (cbCategoria.getSelectedItem() == "CARTERAS") {
+            encarr.carterasEnvio(Precio1, Precio2, Precio3, Cantidad1, Cantidad2, Cantidad3);
+        } else if (cbCategoria.getSelectedItem() == "PANTALONES") {
+            encarr.pantalonesEnvio(Precio1, Precio2, Precio3, Cantidad1, Cantidad2, Cantidad3);
+        } else if (cbCategoria.getSelectedItem() == "ZAPATOS") {
+            encarr.zapatosEnvio(Precio1, Precio2, Precio3, Cantidad1, Cantidad2, Cantidad3);
+        } else if (cbCategoria.getSelectedItem() == "CAMISAS") {
+            encarr.camisasEnvio(Precio1, Precio2, Precio3, Cantidad1, Cantidad2, Cantidad3);
+        }
+
+
     }//GEN-LAST:event_jButton3ActionPerformed
-    
-    public void LimpiezaComboboxes(String B,String BS,String BSP)
-    {
+
+    public void LimpiezaComboboxes(String B, String BS, String BSP) {
         txtCantidadProducto1.setText(B);
         txtCantidadProducto2.setText(BS);
         txtCantidadProducto3.setText(BSP);
     }
+    public void cantidadperfume(int casilla1 , int casilla2 , int casilla3){
     
+        txtCantidadProducto1.setText(casilla1+"");
+        txtCantidadProducto2.setText(casilla2+"");
+        txtCantidadProducto3.setText(casilla3+"");
+    }
+
     private void txtCantidadProducto1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCantidadProducto1ActionPerformed
         // TODO add your handling code here:
-       
+
     }//GEN-LAST:event_txtCantidadProducto1ActionPerformed
 
     private void txtCantidadProducto2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCantidadProducto2ActionPerformed
@@ -413,10 +414,8 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_txtCantidadProducto3ActionPerformed
 
     private void jButton3ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jButton3ItemStateChanged
-    
-       
-   
-        
+
+
     }//GEN-LAST:event_jButton3ItemStateChanged
 
     private void cbCategoriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbCategoriaActionPerformed
@@ -424,9 +423,9 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_cbCategoriaActionPerformed
 
     private void CarritoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CarritoActionPerformed
-    
-    fac.Calculo();
-    fac.setVisible(true);
+
+        fac.Calculo();
+        fac.setVisible(true);
     }//GEN-LAST:event_CarritoActionPerformed
 
     /**

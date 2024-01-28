@@ -9,7 +9,8 @@
  */
 public class EnviosCarrito {
     
-    Factura face = new Factura();
+    Factura fac = new Factura();
+    Menu men = new Menu();
     
     public void perfumesEnvio(String Pr1,String Pr2,String Pr3,String Ca1,String Ca2,String Ca3)
     {
@@ -25,10 +26,10 @@ public class EnviosCarrito {
      producto3Precio = Integer.parseInt(Pr3);
      
      envio = ((producto1Precio*producto1) + (producto2Precio*producto2) + (producto3Precio*producto3));
-     face.tomardatoPerfume(envio);
-      face.Calculo();
-    face.setVisible(true);
-     //fac.setVisible(false);
+     fac.tomardatoPerfume(envio);
+      fac.Calculo();
+    fac.setVisible(true);
+    men.cantidadperfume(producto1, producto2, producto3);
     }
     
     public void carterasEnvio(String Pr1,String Pr2,String Pr3,String Ca1,String Ca2,String Ca3)
@@ -45,10 +46,10 @@ public class EnviosCarrito {
      producto3Precio = Integer.parseInt(Pr3);
      
      envio1 = ((producto1Precio*producto1) + (producto2Precio*producto2) + (producto3Precio*producto3));
-     face.tomardatoCartera(envio1);
-     face.setVisible(false);
-     face.Calculo();
-    face.setVisible(true);
+     fac.tomardatoCartera(envio1);
+     fac.setVisible(false);
+     fac.Calculo();
+    fac.setVisible(true);
     }
     
      public void pantalonesEnvio(String Pr1,String Pr2,String Pr3,String Ca1,String Ca2,String Ca3)
@@ -65,10 +66,10 @@ public class EnviosCarrito {
      producto3Precio = Integer.parseInt(Pr3);
      
      envio1 = ((producto1Precio*producto1) + (producto2Precio*producto2) + (producto3Precio*producto3));
-     face.tomardatoPantalon(envio1);
-     face.setVisible(false);
-     face.Calculo();
-    face.setVisible(true);
+     fac.tomardatoPantalon(envio1);
+     fac.setVisible(false);
+     fac.Calculo();
+    fac.setVisible(true);
     }
      
       public void zapatosEnvio(String Pr1,String Pr2,String Pr3,String Ca1,String Ca2,String Ca3)
@@ -85,10 +86,10 @@ public class EnviosCarrito {
      producto3Precio = Integer.parseInt(Pr3);
      
      envio1 = ((producto1Precio*producto1) + (producto2Precio*producto2) + (producto3Precio*producto3));
-     face.tomardatoZapato(envio1);
-     face.setVisible(false);
-     face.Calculo();
-    face.setVisible(true);
+     fac.tomardatoZapato(envio1);
+     fac.setVisible(false);
+     fac.Calculo();
+    fac.setVisible(true);
     }
       
        public void camisasEnvio(String Pr1,String Pr2,String Pr3,String Ca1,String Ca2,String Ca3)
@@ -105,9 +106,9 @@ public class EnviosCarrito {
      producto3Precio = Integer.parseInt(Pr3);
      
      envio1 = ((producto1Precio*producto1) + (producto2Precio*producto2) + (producto3Precio*producto3));
-     face.tomardatoCamisa(envio1);
-     face.setVisible(false);
-     face.Calculo();
-    face.setVisible(true);
+     fac.tomardatoCamisa(envio1);
+     fac.setVisible(false);
+     fac.Calculo();
+    fac.setVisible(true);
     }
 }
