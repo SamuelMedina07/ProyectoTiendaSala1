@@ -1,4 +1,6 @@
 
+
+
 import java.awt.Image;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
@@ -8,78 +10,53 @@ import javax.swing.ImageIcon;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
 /**
  *
  * @author carlo
  */
-public class Menu extends javax.swing.JFrame {
-
+public class frm_menu extends javax.swing.JFrame {
     private static final int PERFUMES = 0;
     private static final int CARTERAS = 1;
     private static final int PANTALONES = 2;
     private static final int ZAPATOS = 3;
     private static final int CAMISAS = 4;
-
-    ImageIcon image;
-    Icon icon;
-
-    Factura fac = new Factura();
-    EnviosCarrito encarr = new EnviosCarrito();
-
     /**
      * Creates new form Menu
      */
-    public Menu() {
+    public frm_menu() {
         initComponents();
-        cambiarCategoria(PERFUMES);
-        Carrito.setEnabled(false);
-        LimpiezaComboboxes("0", "0", "0");
-
+         cambiarCategoria(PERFUMES);
     }
-    public void LimpiezaComboboxes(String B, String BS, String BSP) {
-        txtCantidadProducto1.setText(B);
-        txtCantidadProducto2.setText(BS);
-        txtCantidadProducto3.setText(BSP);
-    }
-    public void cantidadperfume(int casilla1 , int casilla2 , int casilla3){
     
-        txtCantidadProducto1.setText(casilla1+"");
-        txtCantidadProducto2.setText(casilla2+"");
-        txtCantidadProducto3.setText(casilla3+"");
-    }
-
     public void cambiarCategoria(int categoria) {
-
-        switch (categoria) {
+        
+        switch(categoria){
             case PERFUMES:
                 cambiarImagenes("Perfume 1.png", "perfume 2.png", "perfume 3.png");
-                cambiarPrecios("300", "500", "800");
-               
+                cambiarPrecios("200", "500", "300");
                 break;
             case CARTERAS:
                 cambiarImagenes("carteras 1.png", "carteras 2.png", "carteras 3.png");
-                cambiarPrecios("750", "680", "175");
-                
+                cambiarPrecios("200", "350", "300");
                 break;
             case PANTALONES:
                 cambiarImagenes("pantalones 1.png", "pantalones 2.png", "pantalones 3.png");
-                cambiarPrecios("900", "1250", "1500");
-
+                cambiarPrecios("100", "360", "250");
+                
                 break;
             case ZAPATOS:
                 cambiarImagenes("zapatos 1.png", "zapatos 2.png", "zapatos 3.png");
-                cambiarPrecios("850", "360", "450");
-
+                cambiarPrecios("100", "360", "250");
                 break;
             case CAMISAS:
                 cambiarImagenes("camisas 1.png", "camisas 2.png", "camisas 3.png");
-                cambiarPrecios("790", "250", "680");
-
+                cambiarPrecios("100", "450", "150");
                 break;
         }
-
+        
     }
-
+    
     public void cambiarImagenes(String imgProducto1, String imgProducto2, String imgProducto3) {
         ImageIcon image1 = new ImageIcon(getClass().getResource("/imgs/" + imgProducto1));
         Icon icon1 = new ImageIcon(image1.getImage().getScaledInstance(lblProducto1.getWidth(), lblProducto1.getHeight(), Image.SCALE_DEFAULT));
@@ -93,8 +70,8 @@ public class Menu extends javax.swing.JFrame {
         Icon icon3 = new ImageIcon(image3.getImage().getScaledInstance(lblProducto3.getWidth(), lblProducto3.getHeight(), Image.SCALE_DEFAULT));
         lblProducto3.setIcon(icon3);
     }
-
-    public void cambiarPrecios(String precio1, String precio2, String precio3) {
+    
+    public void cambiarPrecios(String precio1, String precio2,String precio3){
         txtPrecioProducto1.setText(precio1);
         txtPrecioProducto2.setText(precio2);
         txtPrecioProducto3.setText(precio3);
@@ -131,7 +108,6 @@ public class Menu extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
-        Carrito = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -151,7 +127,7 @@ public class Menu extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButton1);
-        jButton1.setBounds(350, 380, 90, 23);
+        jButton1.setBounds(270, 380, 90, 23);
 
         jPanel2.setBackground(new java.awt.Color(0, 0, 0));
         jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 2));
@@ -162,11 +138,6 @@ public class Menu extends javax.swing.JFrame {
         cbCategoria.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 cbCategoriaItemStateChanged(evt);
-            }
-        });
-        cbCategoria.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cbCategoriaActionPerformed(evt);
             }
         });
 
@@ -182,24 +153,6 @@ public class Menu extends javax.swing.JFrame {
         txtPrecioProducto2.setEditable(false);
 
         txtPrecioProducto3.setEditable(false);
-
-        txtCantidadProducto1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtCantidadProducto1ActionPerformed(evt);
-            }
-        });
-
-        txtCantidadProducto2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtCantidadProducto2ActionPerformed(evt);
-            }
-        });
-
-        txtCantidadProducto3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtCantidadProducto3ActionPerformed(evt);
-            }
-        });
 
         jLabel2.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
@@ -319,30 +272,16 @@ public class Menu extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButton2);
-        jButton2.setBounds(470, 380, 100, 23);
+        jButton2.setBounds(380, 380, 100, 23);
 
-        jButton3.setText("Agregar al carrito");
-        jButton3.addItemListener(new java.awt.event.ItemListener() {
-            public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                jButton3ItemStateChanged(evt);
-            }
-        });
+        jButton3.setText("Agregar");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
             }
         });
         jPanel1.add(jButton3);
-        jButton3.setBounds(40, 380, 130, 23);
-
-        Carrito.setText("Ver Carrito");
-        Carrito.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CarritoActionPerformed(evt);
-            }
-        });
-        jPanel1.add(Carrito);
-        Carrito.setBounds(180, 380, 110, 23);
+        jButton3.setBounds(150, 380, 90, 23);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -362,7 +301,6 @@ public class Menu extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void cbCategoriaItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cbCategoriaItemStateChanged
@@ -375,59 +313,8 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        Carrito.setEnabled(true);
-        String Precio1 = txtPrecioProducto1.getText();
-        String Precio2 = txtPrecioProducto2.getText();
-        String Precio3 = txtPrecioProducto3.getText();
-
-        String Cantidad1 = txtCantidadProducto1.getText();
-        String Cantidad2 = txtCantidadProducto2.getText();
-        String Cantidad3 = txtCantidadProducto3.getText();
-
-        if (cbCategoria.getSelectedItem() == "PERFUMES") {
-            encarr.perfumesEnvio(Precio1, Precio2, Precio3, Cantidad1, Cantidad2, Cantidad3);
-        } else if (cbCategoria.getSelectedItem() == "CARTERAS") {
-            encarr.carterasEnvio(Precio1, Precio2, Precio3, Cantidad1, Cantidad2, Cantidad3);
-        } else if (cbCategoria.getSelectedItem() == "PANTALONES") {
-            encarr.pantalonesEnvio(Precio1, Precio2, Precio3, Cantidad1, Cantidad2, Cantidad3);
-        } else if (cbCategoria.getSelectedItem() == "ZAPATOS") {
-            encarr.zapatosEnvio(Precio1, Precio2, Precio3, Cantidad1, Cantidad2, Cantidad3);
-        } else if (cbCategoria.getSelectedItem() == "CAMISAS") {
-            encarr.camisasEnvio(Precio1, Precio2, Precio3, Cantidad1, Cantidad2, Cantidad3);
-        }
-
-
+        // TODO add your handling code here:
     }//GEN-LAST:event_jButton3ActionPerformed
-
-    
-
-    private void txtCantidadProducto1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCantidadProducto1ActionPerformed
-        // TODO add your handling code here:
-
-    }//GEN-LAST:event_txtCantidadProducto1ActionPerformed
-
-    private void txtCantidadProducto2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCantidadProducto2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtCantidadProducto2ActionPerformed
-
-    private void txtCantidadProducto3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCantidadProducto3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtCantidadProducto3ActionPerformed
-
-    private void jButton3ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jButton3ItemStateChanged
-
-
-    }//GEN-LAST:event_jButton3ItemStateChanged
-
-    private void cbCategoriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbCategoriaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cbCategoriaActionPerformed
-
-    private void CarritoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CarritoActionPerformed
-
-        fac.Calculo();
-        fac.setVisible(true);
-    }//GEN-LAST:event_CarritoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -446,26 +333,26 @@ public class Menu extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(frm_menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(frm_menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(frm_menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(frm_menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Menu().setVisible(true);
+                new frm_menu().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton Carrito;
     private javax.swing.JComboBox<String> cbCategoria;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
