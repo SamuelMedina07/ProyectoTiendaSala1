@@ -24,12 +24,20 @@ public class frm_menu extends javax.swing.JFrame {
     /**
      * Creates new form Menu
      */
+    
     public frm_menu(String usuario) {
         initComponents();
          cambiarCategoria(PERFUMES);
          this.setLocationRelativeTo(null);
-    }
+           LimpiezaComboboxes("0", "0", "0");
+           
     
+    }
+    public void LimpiezaComboboxes(String B, String BS, String BSP) {
+        txtCantidadProducto1.setText(B);
+        txtCantidadProducto2.setText(BS);
+        txtCantidadProducto3.setText(BSP);
+    }
     public void cambiarCategoria(int categoria) {
         
         switch(categoria){
@@ -302,6 +310,7 @@ public class frm_menu extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+  
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void cbCategoriaItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cbCategoriaItemStateChanged
@@ -318,6 +327,28 @@ public class frm_menu extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
+        //Carrito.setEnabled(true);
+        EnviosCarrito encarr = new EnviosCarrito();
+        String Precio1 = txtPrecioProducto1.getText();
+        String Precio2 = txtPrecioProducto2.getText();
+        String Precio3 = txtPrecioProducto3.getText();
+
+        String Cantidad1 = txtCantidadProducto1.getText();
+        String Cantidad2 = txtCantidadProducto2.getText();
+        String Cantidad3 = txtCantidadProducto3.getText();
+        
+
+        if (cbCategoria.getSelectedItem() == "PERFUMES") {
+            encarr.perfumesEnvio(Precio1, Precio2, Precio3, Cantidad1, Cantidad2, Cantidad3);
+        } else if (cbCategoria.getSelectedItem() == "CARTERAS") {
+            encarr.carterasEnvio(Precio1, Precio2, Precio3, Cantidad1, Cantidad2, Cantidad3);
+        } else if (cbCategoria.getSelectedItem() == "PANTALONES") {
+            encarr.pantalonesEnvio(Precio1, Precio2, Precio3, Cantidad1, Cantidad2, Cantidad3);
+        } else if (cbCategoria.getSelectedItem() == "ZAPATOS") {
+            encarr.zapatosEnvio(Precio1, Precio2, Precio3, Cantidad1, Cantidad2, Cantidad3);
+        } else if (cbCategoria.getSelectedItem() == "CAMISAS") {
+            encarr.camisasEnvio(Precio1, Precio2, Precio3, Cantidad1, Cantidad2, Cantidad3);
+        }
     }//GEN-LAST:event_jButton3ActionPerformed
 
     /**

@@ -26,10 +26,9 @@ public class EnviosCarrito {
      producto3Precio = Integer.parseInt(Pr3);
      
      envio = ((producto1Precio*producto1) + (producto2Precio*producto2) + (producto3Precio*producto3));
-     fac.tomardatoPerfume(envio);
-      fac.Calculo();
+    fac.tomardatoPerfume(envio);
+    fac.Calculo();
     fac.setVisible(true);
-    men.cantidadperfume(producto1, producto2, producto3);
     }
     
     public void carterasEnvio(String Pr1,String Pr2,String Pr3,String Ca1,String Ca2,String Ca3)
@@ -46,9 +45,9 @@ public class EnviosCarrito {
      producto3Precio = Integer.parseInt(Pr3);
      
      envio1 = ((producto1Precio*producto1) + (producto2Precio*producto2) + (producto3Precio*producto3));
-     fac.tomardatoCartera(envio1);
-     fac.setVisible(false);
-     fac.Calculo();
+    fac.tomardatoCartera(envio1);
+    fac.setVisible(false);
+    fac.Calculo();
     fac.setVisible(true);
     }
     
@@ -66,9 +65,9 @@ public class EnviosCarrito {
      producto3Precio = Integer.parseInt(Pr3);
      
      envio1 = ((producto1Precio*producto1) + (producto2Precio*producto2) + (producto3Precio*producto3));
-     fac.tomardatoPantalon(envio1);
-     fac.setVisible(false);
-     fac.Calculo();
+    fac.tomardatoPantalon(envio1);
+    fac.setVisible(false);
+    fac.Calculo();
     fac.setVisible(true);
     }
      
@@ -86,9 +85,9 @@ public class EnviosCarrito {
      producto3Precio = Integer.parseInt(Pr3);
      
      envio1 = ((producto1Precio*producto1) + (producto2Precio*producto2) + (producto3Precio*producto3));
-     fac.tomardatoZapato(envio1);
-     fac.setVisible(false);
-     fac.Calculo();
+    fac.tomardatoZapato(envio1);
+    fac.setVisible(false);
+    fac.Calculo();
     fac.setVisible(true);
     }
       
@@ -106,9 +105,9 @@ public class EnviosCarrito {
      producto3Precio = Integer.parseInt(Pr3);
      
      envio1 = ((producto1Precio*producto1) + (producto2Precio*producto2) + (producto3Precio*producto3));
-     fac.tomardatoCamisa(envio1);
-     fac.setVisible(false);
-     fac.Calculo();
+    fac.tomardatoCamisa(envio1);
+    fac.setVisible(false);
+    fac.Calculo();
     fac.setVisible(true);
     }
 }
