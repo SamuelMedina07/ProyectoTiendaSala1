@@ -1,5 +1,6 @@
 
 import java.awt.Color;
+import javax.swing.JOptionPane;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -17,6 +18,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
      */
     public PantallaPrincipal() {
         initComponents();
+        this.setLocationRelativeTo(null);
         
     }
 
@@ -163,6 +165,19 @@ public class PantallaPrincipal extends javax.swing.JFrame {
 
     private void btnEmpezarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEmpezarActionPerformed
         // TODO add your handling code here:
+        
+        String cliente = txtUsuario.getText();
+        
+        if (cliente.trim().equals("")) {//trin elimina los espacios al inicio y final de la cadena
+            // El campo está vacío, muestra un mensaje de error y detén el proceso de envío.
+            JOptionPane.showMessageDialog(null, "Por favor, registre su numbre");
+            return;
+        }
+            
+            frm_menu menu = new frm_menu(cliente);
+            menu.setVisible(true);
+            dispose();
+        
     }//GEN-LAST:event_btnEmpezarActionPerformed
 
     private void btnEmpezarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnEmpezarMouseEntered
