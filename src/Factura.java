@@ -43,11 +43,13 @@ public class Factura extends javax.swing.JFrame {
     {
         
             Perfume.setText(dato);
+            
     }
     
     public void tomardatoCartera(String dato)
     {
             Cartera.setText(dato);
+           
     }
     
     public void tomardatoPantalon(String dato)
@@ -120,6 +122,7 @@ public class Factura extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         BotonPago = new javax.swing.JButton();
+        Salir = new javax.swing.JButton();
         jPanel5 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         tsub = new javax.swing.JTextField();
@@ -129,6 +132,7 @@ public class Factura extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         lblNombreUsuario = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
+        jLabel21 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -156,7 +160,7 @@ public class Factura extends javax.swing.JFrame {
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(17, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel10)
                 .addGap(38, 38, 38))
             .addGroup(jPanel2Layout.createSequentialGroup()
@@ -166,7 +170,7 @@ public class Factura extends javax.swing.JFrame {
         );
 
         jPanel1.add(jPanel2);
-        jPanel2.setBounds(6, 6, 455, 55);
+        jPanel2.setBounds(6, 6, 455, 64);
 
         Cartera.setEditable(false);
         Cartera.addActionListener(new java.awt.event.ActionListener() {
@@ -175,7 +179,7 @@ public class Factura extends javax.swing.JFrame {
             }
         });
         jPanel1.add(Cartera);
-        Cartera.setBounds(150, 150, 50, 22);
+        Cartera.setBounds(400, 180, 50, 26);
 
         Perfume.setEditable(false);
         Perfume.addActionListener(new java.awt.event.ActionListener() {
@@ -184,15 +188,15 @@ public class Factura extends javax.swing.JFrame {
             }
         });
         jPanel1.add(Perfume);
-        Perfume.setBounds(150, 120, 50, 22);
+        Perfume.setBounds(400, 140, 50, 26);
 
         Pantalon.setEditable(false);
         jPanel1.add(Pantalon);
-        Pantalon.setBounds(150, 190, 50, 22);
+        Pantalon.setBounds(400, 220, 50, 26);
 
         Zapato.setEditable(false);
         jPanel1.add(Zapato);
-        Zapato.setBounds(150, 230, 50, 22);
+        Zapato.setBounds(400, 260, 50, 26);
 
         Camisa.setEditable(false);
         Camisa.addActionListener(new java.awt.event.ActionListener() {
@@ -201,7 +205,7 @@ public class Factura extends javax.swing.JFrame {
             }
         });
         jPanel1.add(Camisa);
-        Camisa.setBounds(150, 270, 50, 22);
+        Camisa.setBounds(400, 300, 50, 26);
 
         jLabel2.setBackground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("Perfumes");
@@ -220,32 +224,32 @@ public class Factura extends javax.swing.JFrame {
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, 87, Short.MAX_VALUE)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(28, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(24, 24, 24)
+                .addGap(15, 15, 15)
                 .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(18, 18, 18)
                 .addComponent(jLabel6)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(20, 20, 20)
                 .addComponent(jLabel7)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(18, 18, 18)
                 .addComponent(jLabel8)
-                .addGap(27, 27, 27)
+                .addGap(18, 18, 18)
                 .addComponent(jLabel9)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jPanel1.add(jPanel3);
-        jPanel3.setBounds(10, 100, 130, 190);
+        jPanel3.setBounds(10, 130, 130, 200);
 
         jButton1.setText("Seguir Comprando");
         jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -292,18 +296,26 @@ public class Factura extends javax.swing.JFrame {
             }
         });
 
+        Salir.setText("Salir");
+        Salir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SalirActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(40, 40, 40)
+                .addComponent(jButton1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
                 .addComponent(jButton2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 57, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(Salir)
+                .addGap(18, 18, 18)
                 .addComponent(BotonPago)
-                .addGap(49, 49, 49))
+                .addContainerGap())
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -312,12 +324,13 @@ public class Factura extends javax.swing.JFrame {
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1)
                     .addComponent(jButton2)
-                    .addComponent(BotonPago))
+                    .addComponent(BotonPago)
+                    .addComponent(Salir))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jPanel1.add(jPanel4);
-        jPanel4.setBounds(10, 370, 440, 60);
+        jPanel4.setBounds(10, 420, 440, 60);
 
         jPanel5.setBackground(new java.awt.Color(204, 204, 204));
         jPanel5.setLayout(null);
@@ -325,32 +338,32 @@ public class Factura extends javax.swing.JFrame {
         jLabel4.setBackground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("Subtotal");
         jPanel5.add(jLabel4);
-        jLabel4.setBounds(20, 10, 70, 16);
+        jLabel4.setBounds(20, 10, 70, 20);
 
         tsub.setEditable(false);
         jPanel5.add(tsub);
-        tsub.setBounds(10, 30, 71, 22);
+        tsub.setBounds(10, 30, 71, 26);
 
         jLabel3.setBackground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("ISV 18%");
         jPanel5.add(jLabel3);
-        jLabel3.setBounds(170, 10, 70, 16);
+        jLabel3.setBounds(170, 10, 70, 20);
 
         ISV.setEditable(false);
         jPanel5.add(ISV);
-        ISV.setBounds(170, 30, 71, 22);
+        ISV.setBounds(170, 30, 71, 26);
 
         TxtF.setEditable(false);
         jPanel5.add(TxtF);
-        TxtF.setBounds(320, 30, 71, 22);
+        TxtF.setBounds(320, 30, 71, 26);
 
         jLabel5.setBackground(new java.awt.Color(0, 0, 0));
         jLabel5.setText("Total Pagar");
         jPanel5.add(jLabel5);
-        jLabel5.setBounds(320, 10, 70, 16);
+        jLabel5.setBounds(320, 10, 70, 20);
 
         jPanel1.add(jPanel5);
-        jPanel5.setBounds(10, 300, 440, 60);
+        jPanel5.setBounds(10, 350, 440, 60);
 
         lblNombreUsuario.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         lblNombreUsuario.setForeground(new java.awt.Color(255, 255, 255));
@@ -362,19 +375,23 @@ public class Factura extends javax.swing.JFrame {
         jPanel1.add(jLabel12);
         jLabel12.setBounds(20, 60, 70, 40);
 
+        jLabel21.setText("Total");
+        jPanel1.add(jLabel21);
+        jLabel21.setBounds(400, 110, 36, 20);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 467, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 470, Short.MAX_VALUE)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 433, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 490, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -419,6 +436,15 @@ public class Factura extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
         JOptionPane.showMessageDialog(null, "Operacion Abortada", "Operacion Abortada", JOptionPane.ERROR_MESSAGE);
+    Perfume.setText("-");
+    Cartera.setText("-");
+    Pantalon.setText("-");
+    Zapato.setText("-");
+    Camisa.setText("-");
+    tsub.setText("-");
+    ISV.setText("-");
+    TxtF.setText("-");
+    BotonPago.setEnabled(false);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -468,6 +494,11 @@ public class Factura extends javax.swing.JFrame {
         BotonPago.setBackground(  Color.WHITE);
     }//GEN-LAST:event_BotonPagoMouseExited
 
+    private void SalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalirActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+    }//GEN-LAST:event_SalirActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -510,6 +541,7 @@ public class Factura extends javax.swing.JFrame {
     private javax.swing.JTextField ISV;
     private javax.swing.JTextField Pantalon;
     private javax.swing.JTextField Perfume;
+    private javax.swing.JButton Salir;
     private javax.swing.JTextField TxtF;
     private javax.swing.JTextField Zapato;
     private javax.swing.JButton jButton1;
@@ -518,6 +550,7 @@ public class Factura extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;

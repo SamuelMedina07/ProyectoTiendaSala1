@@ -34,6 +34,7 @@ public class frm_menu extends javax.swing.JFrame {
          nombreCliente=usuario;
          this.setLocationRelativeTo(null);
            Limpieza("0", "0", "0", "0", "0", "0", "0", "0");
+           jButton2.setEnabled(false);
     }
     public void Limpieza(String A, String B, String C, String D, String E, String F, String G, String H) {
         txtCantidadProducto1.setText(A);
@@ -45,29 +46,41 @@ public class frm_menu extends javax.swing.JFrame {
         jTextField4.setText(G);
         jTextField5.setText(H);
     }
+    public void LimpiarCantidad(String X, String Y, String Z)
+    {
+    txtCantidadProducto1.setText(X);
+        txtCantidadProducto2.setText(Y);
+        txtCantidadProducto3.setText(Z);
+    
+    }
     public void cambiarCategoria(int categoria) {
         
         switch(categoria){
             case PERFUMES:
                 cambiarImagenes("Perfume 1.png", "perfume 2.png", "perfume 3.png");
                 cambiarPrecios("200", "500", "300");
+                LimpiarCantidad("0","0","0");
                 break;
             case CARTERAS:
                 cambiarImagenes("carteras 1.png", "carteras 2.png", "carteras 3.png");
                 cambiarPrecios("200", "350", "300");
+                LimpiarCantidad("0","0","0");
                 break;
             case PANTALONES:
                 cambiarImagenes("pantalones 1.png", "pantalones 2.png", "pantalones 3.png");
                 cambiarPrecios("100", "360", "250");
+                LimpiarCantidad("0","0","0");
                 
                 break;
             case ZAPATOS:
                 cambiarImagenes("zapatos 1.png", "zapatos 2.png", "zapatos 3.png");
                 cambiarPrecios("100", "360", "250");
+                LimpiarCantidad("0","0","0");
                 break;
             case CAMISAS:
                 cambiarImagenes("camisas 1.png", "camisas 2.png", "camisas 3.png");
                 cambiarPrecios("100", "450", "150");
+                LimpiarCantidad("0","0","0");
                 break;
         }
         
@@ -515,6 +528,7 @@ public class frm_menu extends javax.swing.JFrame {
         String Cantidad1 = txtCantidadProducto1.getText();
         String Cantidad2 = txtCantidadProducto2.getText();
         String Cantidad3 = txtCantidadProducto3.getText();
+        jButton2.setEnabled(true);
    
         if (cbCategoria.getSelectedItem() == "PERFUMES") {
           perfumesEnvio(Precio1, Precio2, Precio3, Cantidad1, Cantidad2, Cantidad3);
@@ -614,6 +628,8 @@ public class frm_menu extends javax.swing.JFrame {
      
      envio = ((producto1Precio*producto1) + (producto2Precio*producto2) + (producto3Precio*producto3));
      jTextField1.setText("" + envio);
+     
+     
      
    
     
