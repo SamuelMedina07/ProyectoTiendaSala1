@@ -137,7 +137,7 @@ public class frm_menu extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButton1);
-        jButton1.setBounds(270, 380, 90, 23);
+        jButton1.setBounds(270, 380, 90, 29);
 
         jPanel2.setBackground(new java.awt.Color(0, 0, 0));
         jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 2));
@@ -163,6 +163,29 @@ public class frm_menu extends javax.swing.JFrame {
         txtPrecioProducto2.setEditable(false);
 
         txtPrecioProducto3.setEditable(false);
+
+        txtCantidadProducto1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtCantidadProducto1ActionPerformed(evt);
+            }
+        });
+        txtCantidadProducto1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtCantidadProducto1KeyTyped(evt);
+            }
+        });
+
+        txtCantidadProducto2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtCantidadProducto2KeyTyped(evt);
+            }
+        });
+
+        txtCantidadProducto3.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtCantidadProducto3KeyTyped(evt);
+            }
+        });
 
         jLabel2.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
@@ -282,7 +305,7 @@ public class frm_menu extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnSalir);
-        btnSalir.setBounds(380, 380, 100, 23);
+        btnSalir.setBounds(380, 380, 100, 29);
 
         jButton3.setText("Agregar");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -291,7 +314,7 @@ public class frm_menu extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButton3);
-        jButton3.setBounds(150, 380, 90, 23);
+        jButton3.setBounds(150, 380, 90, 29);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -351,6 +374,26 @@ public class frm_menu extends javax.swing.JFrame {
           camisasEnvio(Precio1, Precio2, Precio3, Cantidad1, Cantidad2, Cantidad3);
         }
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void txtCantidadProducto1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCantidadProducto1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtCantidadProducto1ActionPerformed
+
+    private void txtCantidadProducto1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCantidadProducto1KeyTyped
+       char caracter = evt.getKeyChar();
+       if (caracter < '0' || caracter > '9') evt.consume();
+        
+    }//GEN-LAST:event_txtCantidadProducto1KeyTyped
+
+    private void txtCantidadProducto2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCantidadProducto2KeyTyped
+       char caracter = evt.getKeyChar();
+       if (caracter < '0' || caracter > '9') evt.consume();
+    }//GEN-LAST:event_txtCantidadProducto2KeyTyped
+
+    private void txtCantidadProducto3KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCantidadProducto3KeyTyped
+        char caracter = evt.getKeyChar();
+       if (caracter < '0' || caracter > '9') evt.consume();
+    }//GEN-LAST:event_txtCantidadProducto3KeyTyped
 
 
      public void perfumesEnvio(String Pr1,String Pr2,String Pr3,String Ca1,String Ca2,String Ca3)
