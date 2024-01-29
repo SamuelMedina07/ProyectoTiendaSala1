@@ -24,7 +24,7 @@ public class Menu extends javax.swing.JFrame {
     Icon icon;
 
     Factura fac = new Factura();
-    EnviosCarrito encarr = new EnviosCarrito();
+    //EnviosCarrito encarr = new EnviosCarrito();
 
     /**
      * Creates new form Menu
@@ -41,12 +41,7 @@ public class Menu extends javax.swing.JFrame {
         txtCantidadProducto2.setText(BS);
         txtCantidadProducto3.setText(BSP);
     }
-    public void cantidadperfume(int casilla1 , int casilla2 , int casilla3){
-    
-        txtCantidadProducto1.setText(casilla1+"");
-        txtCantidadProducto2.setText(casilla2+"");
-        txtCantidadProducto3.setText(casilla3+"");
-    }
+   
 
     public void cambiarCategoria(int categoria) {
 
@@ -383,18 +378,6 @@ public class Menu extends javax.swing.JFrame {
         String Cantidad1 = txtCantidadProducto1.getText();
         String Cantidad2 = txtCantidadProducto2.getText();
         String Cantidad3 = txtCantidadProducto3.getText();
-
-        if (cbCategoria.getSelectedItem() == "PERFUMES") {
-            encarr.perfumesEnvio(Precio1, Precio2, Precio3, Cantidad1, Cantidad2, Cantidad3);
-        } else if (cbCategoria.getSelectedItem() == "CARTERAS") {
-            encarr.carterasEnvio(Precio1, Precio2, Precio3, Cantidad1, Cantidad2, Cantidad3);
-        } else if (cbCategoria.getSelectedItem() == "PANTALONES") {
-            encarr.pantalonesEnvio(Precio1, Precio2, Precio3, Cantidad1, Cantidad2, Cantidad3);
-        } else if (cbCategoria.getSelectedItem() == "ZAPATOS") {
-            encarr.zapatosEnvio(Precio1, Precio2, Precio3, Cantidad1, Cantidad2, Cantidad3);
-        } else if (cbCategoria.getSelectedItem() == "CAMISAS") {
-            encarr.camisasEnvio(Precio1, Precio2, Precio3, Cantidad1, Cantidad2, Cantidad3);
-        }
 
 
     }//GEN-LAST:event_jButton3ActionPerformed
