@@ -7,6 +7,7 @@
  *
  * @author Samuel
  */
+import java.awt.Color;
 import java.text.DecimalFormat;
 import javax.swing.JOptionPane; 
 
@@ -63,7 +64,11 @@ public class Factura extends javax.swing.JFrame {
     {
             Camisa.setText(dato);
     }
-        
+    
+    public void obtenerNombreCliente(String nombre){
+        lblNombreUsuario.setText(nombre);
+    }
+    
     public void Calculo(){
      BotonPago.setEnabled(true);
     double Perf,Car,Pan,Zap,Cam,subtotal,impuesto,totalfinal;
@@ -122,41 +127,46 @@ public class Factura extends javax.swing.JFrame {
         ISV = new javax.swing.JTextField();
         TxtF = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
+        lblNombreUsuario = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(153, 204, 255));
+        jPanel1.setBackground(new java.awt.Color(153, 153, 153));
         jPanel1.setLayout(null);
 
-        jPanel2.setBackground(new java.awt.Color(102, 204, 255));
+        jPanel2.setBackground(new java.awt.Color(0, 0, 0));
 
         jLabel1.setBackground(new java.awt.Color(0, 0, 0));
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel1.setText("Factura");
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("FACTURA");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(196, 196, 196)
+                .addGap(175, 175, 175)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(82, 82, 82)
                 .addComponent(jLabel10)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(137, Short.MAX_VALUE))
+                .addContainerGap(30, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap(17, Short.MAX_VALUE)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel10))
+                .addComponent(jLabel10)
+                .addGap(38, 38, 38))
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
         jPanel1.add(jPanel2);
-        jPanel2.setBounds(6, 6, 458, 65);
+        jPanel2.setBounds(6, 6, 455, 55);
 
         Cartera.setEditable(false);
         Cartera.addActionListener(new java.awt.event.ActionListener() {
@@ -165,7 +175,7 @@ public class Factura extends javax.swing.JFrame {
             }
         });
         jPanel1.add(Cartera);
-        Cartera.setBounds(150, 130, 50, 26);
+        Cartera.setBounds(150, 150, 50, 22);
 
         Perfume.setEditable(false);
         Perfume.addActionListener(new java.awt.event.ActionListener() {
@@ -174,15 +184,15 @@ public class Factura extends javax.swing.JFrame {
             }
         });
         jPanel1.add(Perfume);
-        Perfume.setBounds(150, 100, 50, 26);
+        Perfume.setBounds(150, 120, 50, 22);
 
         Pantalon.setEditable(false);
         jPanel1.add(Pantalon);
-        Pantalon.setBounds(150, 170, 50, 26);
+        Pantalon.setBounds(150, 190, 50, 22);
 
         Zapato.setEditable(false);
         jPanel1.add(Zapato);
-        Zapato.setBounds(150, 210, 50, 26);
+        Zapato.setBounds(150, 230, 50, 22);
 
         Camisa.setEditable(false);
         Camisa.addActionListener(new java.awt.event.ActionListener() {
@@ -191,7 +201,7 @@ public class Factura extends javax.swing.JFrame {
             }
         });
         jPanel1.add(Camisa);
-        Camisa.setBounds(150, 250, 50, 26);
+        Camisa.setBounds(150, 270, 50, 22);
 
         jLabel2.setBackground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("Perfumes");
@@ -235,9 +245,17 @@ public class Factura extends javax.swing.JFrame {
         );
 
         jPanel1.add(jPanel3);
-        jPanel3.setBounds(10, 80, 130, 190);
+        jPanel3.setBounds(10, 100, 130, 190);
 
         jButton1.setText("Seguir Comprando");
+        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jButton1MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jButton1MouseExited(evt);
+            }
+        });
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -245,6 +263,14 @@ public class Factura extends javax.swing.JFrame {
         });
 
         jButton2.setText("Abortar");
+        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jButton2MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jButton2MouseExited(evt);
+            }
+        });
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
@@ -252,6 +278,14 @@ public class Factura extends javax.swing.JFrame {
         });
 
         BotonPago.setText("Pagar");
+        BotonPago.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                BotonPagoMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                BotonPagoMouseExited(evt);
+            }
+        });
         BotonPago.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BotonPagoActionPerformed(evt);
@@ -291,32 +325,42 @@ public class Factura extends javax.swing.JFrame {
         jLabel4.setBackground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("Subtotal");
         jPanel5.add(jLabel4);
-        jLabel4.setBounds(20, 10, 70, 20);
+        jLabel4.setBounds(20, 10, 70, 16);
 
         tsub.setEditable(false);
         jPanel5.add(tsub);
-        tsub.setBounds(10, 30, 71, 26);
+        tsub.setBounds(10, 30, 71, 22);
 
         jLabel3.setBackground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("ISV 18%");
         jPanel5.add(jLabel3);
-        jLabel3.setBounds(170, 10, 70, 20);
+        jLabel3.setBounds(170, 10, 70, 16);
 
         ISV.setEditable(false);
         jPanel5.add(ISV);
-        ISV.setBounds(170, 30, 71, 26);
+        ISV.setBounds(170, 30, 71, 22);
 
         TxtF.setEditable(false);
         jPanel5.add(TxtF);
-        TxtF.setBounds(320, 30, 71, 26);
+        TxtF.setBounds(320, 30, 71, 22);
 
         jLabel5.setBackground(new java.awt.Color(0, 0, 0));
         jLabel5.setText("Total Pagar");
         jPanel5.add(jLabel5);
-        jLabel5.setBounds(320, 10, 70, 20);
+        jLabel5.setBounds(320, 10, 70, 16);
 
         jPanel1.add(jPanel5);
         jPanel5.setBounds(10, 300, 440, 60);
+
+        lblNombreUsuario.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        lblNombreUsuario.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel1.add(lblNombreUsuario);
+        lblNombreUsuario.setBounds(100, 60, 290, 40);
+
+        jLabel12.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        jLabel12.setText("Cliente:");
+        jPanel1.add(jLabel12);
+        jLabel12.setBounds(20, 60, 70, 40);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -394,6 +438,36 @@ public class Factura extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_CamisaActionPerformed
 
+    private void jButton1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseEntered
+        // TODO add your handling code here:
+        jButton1.setBackground( new Color(255,102,102));
+    }//GEN-LAST:event_jButton1MouseEntered
+
+    private void jButton2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseEntered
+        // TODO add your handling code here:
+        jButton2.setBackground( new Color(255,102,102));
+    }//GEN-LAST:event_jButton2MouseEntered
+
+    private void BotonPagoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonPagoMouseEntered
+        // TODO add your handling code here:
+        BotonPago.setBackground( new Color(255,102,102));
+    }//GEN-LAST:event_BotonPagoMouseEntered
+
+    private void jButton1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseExited
+        // TODO add your handling code here:
+        jButton1.setBackground(  Color.WHITE);
+    }//GEN-LAST:event_jButton1MouseExited
+
+    private void jButton2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseExited
+        // TODO add your handling code here:
+        jButton2.setBackground(  Color.WHITE);
+    }//GEN-LAST:event_jButton2MouseExited
+
+    private void BotonPagoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonPagoMouseExited
+        // TODO add your handling code here:
+        BotonPago.setBackground(  Color.WHITE);
+    }//GEN-LAST:event_BotonPagoMouseExited
+
     /**
      * @param args the command line arguments
      */
@@ -442,6 +516,7 @@ public class Factura extends javax.swing.JFrame {
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -455,6 +530,7 @@ public class Factura extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
+    private javax.swing.JLabel lblNombreUsuario;
     private javax.swing.JTextField tsub;
     // End of variables declaration//GEN-END:variables
 }

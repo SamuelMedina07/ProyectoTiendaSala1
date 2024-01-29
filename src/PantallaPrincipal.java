@@ -70,7 +70,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
 
         jLabel4.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("Ingresa tu nombre:");
+        jLabel4.setText("Ingresar nombre:");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -121,7 +121,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(jLabel1))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(24, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(21, 21, 21))
         );
@@ -183,7 +183,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
 
     private void btnEmpezarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnEmpezarMouseEntered
         // TODO add your handling code here:
-        btnEmpezar.setBackground(Color.GRAY);
+         btnEmpezar.setBackground( new Color(255,102,102));
     }//GEN-LAST:event_btnEmpezarMouseEntered
 
     private void btnEmpezarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnEmpezarMouseExited
