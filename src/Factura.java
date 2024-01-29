@@ -20,6 +20,7 @@ public class Factura extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
        InicioZero("0","0","0","0","0");
        BotonPago.setEnabled(false);
+      
             
     }
     public void InicioZero(String a, String b, String c, String d, String e){
@@ -30,31 +31,37 @@ public class Factura extends javax.swing.JFrame {
     Zapato.setText(d);
     Camisa.setText(e);
     }
+    
+    public void NombreCliente(String Name){
+    
+    jLabel10.setText(Name);
+    
+    }
  
-    public void tomardatoPerfume(int dato)
+    public void tomardatoPerfume(String dato)
     {
         
-            Perfume.setText(""+dato);
+            Perfume.setText(dato);
     }
     
-    public void tomardatoCartera(int dato1)
+    public void tomardatoCartera(String dato)
     {
-            Cartera.setText(""+dato1);
+            Cartera.setText(dato);
     }
     
-    public void tomardatoPantalon(int dato1)
+    public void tomardatoPantalon(String dato)
     {
-            Pantalon.setText(""+dato1);
+            Pantalon.setText(dato);
     }
     
-    public void tomardatoZapato(int dato1)
+    public void tomardatoZapato(String dato)
     {
-            Zapato.setText(""+dato1);
+            Zapato.setText(dato);
     }
     
-    public void tomardatoCamisa(int dato1)
+    public void tomardatoCamisa(String dato)
     {
-            Camisa.setText(""+dato1);
+            Camisa.setText(dato);
     }
         
     public void Calculo(){
@@ -92,27 +99,29 @@ public class Factura extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
         Cartera = new javax.swing.JTextField();
-        jLabel3 = new javax.swing.JLabel();
-        ISV = new javax.swing.JTextField();
-        jLabel4 = new javax.swing.JLabel();
-        tsub = new javax.swing.JTextField();
-        jLabel5 = new javax.swing.JLabel();
-        TxtF = new javax.swing.JTextField();
         Perfume = new javax.swing.JTextField();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
         Pantalon = new javax.swing.JTextField();
-        jLabel8 = new javax.swing.JLabel();
         Zapato = new javax.swing.JTextField();
-        jLabel9 = new javax.swing.JLabel();
         Camisa = new javax.swing.JTextField();
         jPanel3 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         BotonPago = new javax.swing.JButton();
+        jPanel5 = new javax.swing.JPanel();
+        jLabel4 = new javax.swing.JLabel();
+        tsub = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        ISV = new javax.swing.JTextField();
+        TxtF = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -123,33 +132,31 @@ public class Factura extends javax.swing.JFrame {
 
         jLabel1.setBackground(new java.awt.Color(0, 0, 0));
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel1.setText("Carrito / Factura");
+        jLabel1.setText("Factura");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(118, Short.MAX_VALUE)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(110, 110, 110))
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(196, 196, 196)
+                .addComponent(jLabel10)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(137, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1)
-                .addContainerGap(17, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(17, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(jLabel10))
+                .addContainerGap())
         );
 
         jPanel1.add(jPanel2);
-        jPanel2.setBounds(6, 6, 458, 55);
-
-        jLabel2.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel2.setText("Perfumes");
-        jPanel1.add(jLabel2);
-        jLabel2.setBounds(20, 100, 120, 16);
+        jPanel2.setBounds(6, 6, 458, 65);
 
         Cartera.setEditable(false);
         Cartera.addActionListener(new java.awt.event.ActionListener() {
@@ -158,34 +165,7 @@ public class Factura extends javax.swing.JFrame {
             }
         });
         jPanel1.add(Cartera);
-        Cartera.setBounds(150, 130, 64, 22);
-
-        jLabel3.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel3.setText("ISV 18%");
-        jPanel1.add(jLabel3);
-        jLabel3.setBounds(297, 310, 70, 16);
-
-        ISV.setEditable(false);
-        jPanel1.add(ISV);
-        ISV.setBounds(360, 300, 71, 22);
-
-        jLabel4.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel4.setText("Subtotal");
-        jPanel1.add(jLabel4);
-        jLabel4.setBounds(300, 280, 70, 16);
-
-        tsub.setEditable(false);
-        jPanel1.add(tsub);
-        tsub.setBounds(360, 270, 71, 22);
-
-        jLabel5.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel5.setText("Total Pagar");
-        jPanel1.add(jLabel5);
-        jLabel5.setBounds(290, 340, 70, 16);
-
-        TxtF.setEditable(false);
-        jPanel1.add(TxtF);
-        TxtF.setBounds(360, 330, 71, 22);
+        Cartera.setBounds(150, 130, 50, 26);
 
         Perfume.setEditable(false);
         Perfume.addActionListener(new java.awt.event.ActionListener() {
@@ -194,31 +174,15 @@ public class Factura extends javax.swing.JFrame {
             }
         });
         jPanel1.add(Perfume);
-        Perfume.setBounds(150, 100, 64, 22);
-
-        jLabel6.setText("Carteras");
-        jPanel1.add(jLabel6);
-        jLabel6.setBounds(20, 130, 60, 16);
-
-        jLabel7.setText("Pantalones");
-        jPanel1.add(jLabel7);
-        jLabel7.setBounds(20, 170, 60, 16);
+        Perfume.setBounds(150, 100, 50, 26);
 
         Pantalon.setEditable(false);
         jPanel1.add(Pantalon);
-        Pantalon.setBounds(150, 170, 64, 22);
-
-        jLabel8.setText("Zapatos");
-        jPanel1.add(jLabel8);
-        jLabel8.setBounds(20, 210, 60, 16);
+        Pantalon.setBounds(150, 170, 50, 26);
 
         Zapato.setEditable(false);
         jPanel1.add(Zapato);
-        Zapato.setBounds(150, 210, 64, 22);
-
-        jLabel9.setText("Camisas");
-        jPanel1.add(jLabel9);
-        jLabel9.setBounds(20, 260, 60, 16);
+        Zapato.setBounds(150, 210, 50, 26);
 
         Camisa.setEditable(false);
         Camisa.addActionListener(new java.awt.event.ActionListener() {
@@ -227,21 +191,51 @@ public class Factura extends javax.swing.JFrame {
             }
         });
         jPanel1.add(Camisa);
-        Camisa.setBounds(150, 250, 64, 22);
+        Camisa.setBounds(150, 250, 50, 26);
+
+        jLabel2.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel2.setText("Perfumes");
+
+        jLabel6.setText("Carteras");
+
+        jLabel7.setText("Pantalones");
+
+        jLabel8.setText("Zapatos");
+
+        jLabel9.setText("Camisas");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 130, Short.MAX_VALUE)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 230, Short.MAX_VALUE)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(24, 24, 24)
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel6)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel7)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel8)
+                .addGap(27, 27, 27)
+                .addComponent(jLabel9)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jPanel1.add(jPanel3);
-        jPanel3.setBounds(10, 70, 130, 230);
+        jPanel3.setBounds(10, 80, 130, 190);
 
         jButton1.setText("Seguir Comprando");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -285,11 +279,44 @@ public class Factura extends javax.swing.JFrame {
                     .addComponent(jButton1)
                     .addComponent(jButton2)
                     .addComponent(BotonPago))
-                .addContainerGap(18, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jPanel1.add(jPanel4);
         jPanel4.setBounds(10, 370, 440, 60);
+
+        jPanel5.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel5.setLayout(null);
+
+        jLabel4.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel4.setText("Subtotal");
+        jPanel5.add(jLabel4);
+        jLabel4.setBounds(20, 10, 70, 20);
+
+        tsub.setEditable(false);
+        jPanel5.add(tsub);
+        tsub.setBounds(10, 30, 71, 26);
+
+        jLabel3.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel3.setText("ISV 18%");
+        jPanel5.add(jLabel3);
+        jLabel3.setBounds(170, 10, 70, 20);
+
+        ISV.setEditable(false);
+        jPanel5.add(ISV);
+        ISV.setBounds(170, 30, 71, 26);
+
+        TxtF.setEditable(false);
+        jPanel5.add(TxtF);
+        TxtF.setBounds(320, 30, 71, 26);
+
+        jLabel5.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel5.setText("Total Pagar");
+        jPanel5.add(jLabel5);
+        jLabel5.setBounds(320, 10, 70, 20);
+
+        jPanel1.add(jPanel5);
+        jPanel5.setBounds(10, 300, 440, 60);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -414,6 +441,7 @@ public class Factura extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -426,6 +454,7 @@ public class Factura extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
     private javax.swing.JTextField tsub;
     // End of variables declaration//GEN-END:variables
 }

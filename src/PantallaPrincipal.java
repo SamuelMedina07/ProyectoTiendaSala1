@@ -176,6 +176,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
             
             frm_menu menu = new frm_menu(cliente);
             menu.setVisible(true);
+            
             dispose();
         
     }//GEN-LAST:event_btnEmpezarActionPerformed

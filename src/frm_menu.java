@@ -29,15 +29,20 @@ public class frm_menu extends javax.swing.JFrame {
         initComponents();
          cambiarCategoria(PERFUMES);
          this.setLocationRelativeTo(null);
-           LimpiezaComboboxes("0", "0", "0");
+           Limpieza("0", "0", "0", "0", "0", "0", "0", "0");
            
            
     
     }
-    public void LimpiezaComboboxes(String B, String BS, String BSP) {
-        txtCantidadProducto1.setText(B);
-        txtCantidadProducto2.setText(BS);
-        txtCantidadProducto3.setText(BSP);
+    public void Limpieza(String A, String B, String C, String D, String E, String F, String G, String H) {
+        txtCantidadProducto1.setText(A);
+        txtCantidadProducto2.setText(B);
+        txtCantidadProducto3.setText(C);
+        jTextField1.setText(D);
+        jTextField2.setText(E);
+        jTextField3.setText(F);
+        jTextField4.setText(G);
+        jTextField5.setText(H);
     }
     public void cambiarCategoria(int categoria) {
         
@@ -118,6 +123,20 @@ public class frm_menu extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         btnSalir = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
+        jPanel3 = new javax.swing.JPanel();
+        jTextField1 = new javax.swing.JTextField();
+        jTextField2 = new javax.swing.JTextField();
+        jTextField3 = new javax.swing.JTextField();
+        jTextField4 = new javax.swing.JTextField();
+        jTextField5 = new javax.swing.JTextField();
+        jLabel8 = new javax.swing.JLabel();
+        jPanel4 = new javax.swing.JPanel();
+        jButton2 = new javax.swing.JButton();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -126,9 +145,9 @@ public class frm_menu extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Bodoni MT Condensed", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Tienda de moda sin Nombre Definido");
+        jLabel1.setText("TOTAL LOOK");
         jPanel1.add(jLabel1);
-        jLabel1.setBounds(200, 20, 196, 29);
+        jLabel1.setBounds(250, 20, 196, 29);
 
         jButton1.setText("Cancelar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -316,11 +335,129 @@ public class frm_menu extends javax.swing.JFrame {
         jPanel1.add(jButton3);
         jButton3.setBounds(150, 380, 90, 29);
 
+        jTextField1.setEditable(false);
+
+        jTextField2.setEditable(false);
+
+        jTextField3.setEditable(false);
+
+        jTextField4.setEditable(false);
+        jTextField4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField4ActionPerformed(evt);
+            }
+        });
+
+        jTextField5.setEditable(false);
+
+        jLabel8.setText("Previsualizacion de Carrito");
+
+        jPanel4.setBackground(new java.awt.Color(153, 153, 153));
+
+        jButton2.setText("Proceder Pago");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(23, Short.MAX_VALUE))
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton2)
+                .addGap(28, 28, 28))
+        );
+
+        jLabel9.setText("Perfumes");
+
+        jLabel10.setText("Carteras");
+
+        jLabel11.setText("Pantalones");
+
+        jLabel12.setText("Zapatos");
+
+        jLabel13.setText("Camisas");
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel10)
+                    .addComponent(jLabel11)
+                    .addComponent(jLabel12)
+                    .addComponent(jLabel13)
+                    .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jTextField1)
+                    .addComponent(jTextField2)
+                    .addComponent(jTextField3)
+                    .addComponent(jTextField4)
+                    .addComponent(jTextField5, javax.swing.GroupLayout.DEFAULT_SIZE, 109, Short.MAX_VALUE))
+                .addContainerGap())
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(40, 40, 40)
+                .addComponent(jLabel8)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addContainerGap(32, Short.MAX_VALUE)
+                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(50, 50, 50))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(9, 9, 9)
+                .addComponent(jLabel8)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel9))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel10))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel11))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel12))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel13))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 106, Short.MAX_VALUE)
+                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+
+        jPanel1.add(jPanel3);
+        jPanel3.setBounds(600, 10, 270, 390);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 615, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 869, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -395,6 +532,23 @@ public class frm_menu extends javax.swing.JFrame {
        if (caracter < '0' || caracter > '9') evt.consume();
     }//GEN-LAST:event_txtCantidadProducto3KeyTyped
 
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+     Factura fac = new Factura();
+     
+      fac.tomardatoPerfume(jTextField1.getText());
+      fac.tomardatoCartera(jTextField2.getText());
+      fac.tomardatoPantalon(jTextField3.getText());
+      fac.tomardatoZapato(jTextField4.getText());
+      fac.tomardatoCamisa(jTextField5.getText());
+        
+         fac.Calculo();
+        fac.setVisible(true);
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField4ActionPerformed
+
 
      public void perfumesEnvio(String Pr1,String Pr2,String Pr3,String Ca1,String Ca2,String Ca3)
     {
@@ -411,16 +565,16 @@ public class frm_menu extends javax.swing.JFrame {
      producto3Precio = Integer.parseInt(Pr3);
      
      envio = ((producto1Precio*producto1) + (producto2Precio*producto2) + (producto3Precio*producto3));
+     jTextField1.setText("" + envio);
      
-    fac.tomardatoPerfume(envio);
-    fac.Calculo();
-    fac.setVisible(true);
+   
+    
     }
     
     public void carterasEnvio(String Pr1,String Pr2,String Pr3,String Ca1,String Ca2,String Ca3)
     {Factura fac = new Factura();
     int producto1,producto2,producto3;
-    int producto1Precio,producto2Precio,producto3Precio,envio1;
+    int producto1Precio,producto2Precio,producto3Precio,envio;
      producto1 = Integer.parseInt(Ca1);
      producto1Precio = Integer.parseInt(Pr1);
      
@@ -430,17 +584,16 @@ public class frm_menu extends javax.swing.JFrame {
      producto3 = Integer.parseInt(Ca3);
      producto3Precio = Integer.parseInt(Pr3);
      
-     envio1 = ((producto1Precio*producto1) + (producto2Precio*producto2) + (producto3Precio*producto3));
-    fac.tomardatoCartera(envio1);
-    fac.Calculo();
-    fac.setVisible(true);
+     envio = ((producto1Precio*producto1) + (producto2Precio*producto2) + (producto3Precio*producto3));
+    jTextField2.setText("" + envio);
+  
     }
     
      public void pantalonesEnvio(String Pr1,String Pr2,String Pr3,String Ca1,String Ca2,String Ca3)
     {
         Factura fac = new Factura();
     int producto1,producto2,producto3;
-    int producto1Precio,producto2Precio,producto3Precio,envio1;
+    int producto1Precio,producto2Precio,producto3Precio,envio;
      producto1 = Integer.parseInt(Ca1);
      producto1Precio = Integer.parseInt(Pr1);
      
@@ -450,17 +603,15 @@ public class frm_menu extends javax.swing.JFrame {
      producto3 = Integer.parseInt(Ca3);
      producto3Precio = Integer.parseInt(Pr3);
      
-     envio1 = ((producto1Precio*producto1) + (producto2Precio*producto2) + (producto3Precio*producto3));
-    fac.tomardatoPantalon(envio1);
-    fac.Calculo();
-    fac.setVisible(true);
+     envio = ((producto1Precio*producto1) + (producto2Precio*producto2) + (producto3Precio*producto3));
+    jTextField3.setText("" + envio);
     }
      
       public void zapatosEnvio(String Pr1,String Pr2,String Pr3,String Ca1,String Ca2,String Ca3)
     {
         Factura fac = new Factura();
     int producto1,producto2,producto3;
-    int producto1Precio,producto2Precio,producto3Precio,envio1;
+    int producto1Precio,producto2Precio,producto3Precio,envio;
      producto1 = Integer.parseInt(Ca1);
      producto1Precio = Integer.parseInt(Pr1);
      
@@ -470,17 +621,15 @@ public class frm_menu extends javax.swing.JFrame {
      producto3 = Integer.parseInt(Ca3);
      producto3Precio = Integer.parseInt(Pr3);
      
-     envio1 = ((producto1Precio*producto1) + (producto2Precio*producto2) + (producto3Precio*producto3));
-    fac.tomardatoZapato(envio1);
-    fac.Calculo();
-    fac.setVisible(true);
+     envio = ((producto1Precio*producto1) + (producto2Precio*producto2) + (producto3Precio*producto3));
+   jTextField4.setText("" + envio);
     }
       
        public void camisasEnvio(String Pr1,String Pr2,String Pr3,String Ca1,String Ca2,String Ca3)
     {
         Factura fac = new Factura();
     int producto1,producto2,producto3;
-    int producto1Precio,producto2Precio,producto3Precio,envio1;
+    int producto1Precio,producto2Precio,producto3Precio,envio;
      producto1 = Integer.parseInt(Ca1);
      producto1Precio = Integer.parseInt(Pr1);
      
@@ -490,10 +639,8 @@ public class frm_menu extends javax.swing.JFrame {
      producto3 = Integer.parseInt(Ca3);
      producto3Precio = Integer.parseInt(Pr3);
      
-     envio1 = ((producto1Precio*producto1) + (producto2Precio*producto2) + (producto3Precio*producto3));
-    fac.tomardatoCamisa(envio1);
-    fac.Calculo();
-    fac.setVisible(true);
+     envio = ((producto1Precio*producto1) + (producto2Precio*producto2) + (producto3Precio*producto3));
+    jTextField5.setText("" + envio);
     }
     
     
@@ -507,16 +654,30 @@ public class frm_menu extends javax.swing.JFrame {
     private javax.swing.JButton btnSalir;
     private javax.swing.JComboBox<String> cbCategoria;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTextField3;
+    private javax.swing.JTextField jTextField4;
+    private javax.swing.JTextField jTextField5;
     private javax.swing.JLabel lblProducto1;
     private javax.swing.JLabel lblProducto2;
     private javax.swing.JLabel lblProducto3;
